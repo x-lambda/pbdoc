@@ -3,8 +3,9 @@ package db
 import (
 	"context"
 	"database/sql"
-	"pbdoc/util/conf"
 	"sync"
+
+	"pbdoc/util/conf"
 
 	_ "github.com/mattn/go-sqlite3"
 	"golang.org/x/sync/singleflight"
@@ -107,4 +108,8 @@ func (conn *conn) QueryContext(ctx context.Context, sql string, args ...interfac
 
 func (conn *conn) Exec(ctx context.Context, sql string, args ...interface{}) (sql.Result, error) {
 	return conn.db.ExecContext(ctx, sql, args)
+}
+
+func IsNoRow(err error) bool {
+	return sql.ErrNoRows == err
 }

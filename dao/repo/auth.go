@@ -57,4 +57,6 @@ func QueryByAccessKey(ctx context.Context, projectID int32, accessKey string) (a
 	return
 }
 
-func AddAuth(ctx context.Context, projectID int32, accessKey string)
+func AddAuth(ctx context.Context, projectID int32, accessKey string) {
+
+}

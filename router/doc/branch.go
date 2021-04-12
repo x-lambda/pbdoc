@@ -1,0 +1,3 @@
+package doc
+
+// ${package}.${service}
